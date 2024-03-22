@@ -3,7 +3,7 @@ from pydantic import BaseModel
 from app.app_statistic.models.enum import DepartmentsEnum
 
 
-class StatisticSchema(BaseModel):
+class CreatedStatisticSchema(BaseModel):
     department: DepartmentsEnum
     mass: int
     personal: int
@@ -12,7 +12,8 @@ class StatisticSchema(BaseModel):
     commercial_survey: int
     service: int
 
-class DepartmentSchema(BaseModel):
+
+class StatisticSchema(BaseModel):
     mass: int
     personal: int
     informational: int
@@ -20,5 +21,16 @@ class DepartmentSchema(BaseModel):
     commercial_survey: int
     service: int
 
-class DepartmentDetailSchema(DepartmentSchema):
-    department: dict[DepartmentSchema]
+
+class DepartmentDetailSchema(StatisticSchema):
+    marketing: StatisticSchema
+    sales: StatisticSchema
+    informational: StatisticSchema
+    survey: StatisticSchema
+    commercial_survey: StatisticSchema
+    service: StatisticSchema
+
+
+class SummStatisticSchema(BaseModel):
+    total: StatisticSchema
+    departments: DepartmentDetailSchema
