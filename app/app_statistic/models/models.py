@@ -11,6 +11,7 @@ class Statistic(ABCBase, TimestampMixin):
 
     __tablename__ = 'statistic'
 
+    id = Mapped[int]
     department: Mapped[DepartmentsEnum] = mapped_column(default=DepartmentsEnum.MARKETING)
     mass: Mapped[int]
     personal: Mapped[int]
