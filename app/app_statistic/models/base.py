@@ -1,7 +1,7 @@
 from sqlalchemy.orm import Mapped
 
-from app.database import  Base
-from app.app.models.Base.types import int_pk
+from app.database import Base
+from app.app_statistic.models.types import int_pk
 
 
 class ABCBase(Base):

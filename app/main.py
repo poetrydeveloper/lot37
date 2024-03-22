@@ -1,5 +1,5 @@
 from fastapi import FastAPI
-from app.routers.statistic import router as router_statistic
+from app_statistic.routers.statistic import router as router_statistic
 
 app = FastAPI()
 
